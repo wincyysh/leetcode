@@ -13,15 +13,13 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        # Initialize our variables using the first element.
-        current_subarray = max_subarray = nums[0]
-
-        # Start with the 2nd element since we already used the first one.
+        cur_a = max_a = nums[0]
+        
         for num in nums[1:]:
-            # If current_subarray is negative, throw it away. Otherwise, keep adding to it.
-            current_subarray = max(num, current_subarray + num)
-            max_subarray = max(max_subarray, current_subarray)
-        return max_subarray
+            cur_a = max(cur_a+num, num)
+            max_a = max(max_a, cur_a)
+
+        return max_a
 
 class TestMaxSubArray(unittest.TestCase):
     def setUp(self):
