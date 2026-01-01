@@ -46,8 +46,6 @@ class Testinsert(unittest.TestCase):
         result = self.solution.insert(intervals, newInterval)
         self.assertEqual(result, Output)
 
-
-
 if __name__ == '__main__':
     unittest.main()
 
