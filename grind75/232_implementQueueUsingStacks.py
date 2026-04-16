@@ -33,10 +33,7 @@ class MyQueue(object):
         """
         :rtype: bool
         """
-        if not self.outstack:
-            return True
-        else:
-            return False  
+        return not self.outstack and not self.instack
 
 
 
